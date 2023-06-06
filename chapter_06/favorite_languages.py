@@ -6,9 +6,9 @@ favorite_languages = {
     }
 
 friends = ['phil', 'sarah']
-for name in favorite_languages.keys():
+for name in favorite_languages:
     print(name.title())
-    
+
     if name in friends:
         language = favorite_languages[name].title()
         print(f"\t{name.title()}, I see you love {language}!")

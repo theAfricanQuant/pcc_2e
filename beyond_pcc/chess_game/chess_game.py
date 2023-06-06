@@ -30,11 +30,13 @@ class ChessGame:
 
     def _check_events(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if (
+                event.type != pygame.QUIT
+                and event.type == pygame.KEYDOWN
+                and event.key == pygame.K_q
+                or event.type == pygame.QUIT
+            ):
                 sys.exit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_q:
-                    sys.exit()
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
